@@ -1,8 +1,9 @@
-import asyncio
+# import asyncio
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
-async def fetch_lastest_9gag_post():
+async  def fetch_latest_9gag_post():
+    """Get the latest post on 9gag"""
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
         page = await browser.new_page()
@@ -42,6 +43,8 @@ async def fetch_lastest_9gag_post():
         for post in post_data:
             print(f"URL: {post['url']} | ID: {post['id']}")
 
+        return post_data
+
 
 # Run the async function
-asyncio.run(fetch_lastest_9gag_post())
+# asyncio.run(fetch_latest_9gag_post())
