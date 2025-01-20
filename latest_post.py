@@ -2,7 +2,8 @@
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
-async  def fetch_latest_9gag_post():
+
+async def fetch_latest_9gag_post():
     """Get the latest post on 9gag"""
     async with async_playwright() as p:
         browser = await p.firefox.launch(headless=True)
