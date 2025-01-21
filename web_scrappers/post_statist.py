@@ -2,7 +2,7 @@
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
-from helpers import parse_count
+from helpers.helpers import parse_count
 
 async  def fetch_post_details(post_url):
     """
