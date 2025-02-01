@@ -40,7 +40,7 @@ def fetch_comments(post_id, count=10, sort_type="hot", next_token=None):
                 "text": comment.get("text"),
                 "timestamp": comment.get("timestamp"),
             }
-            for comment in comments if comment.get('type')  == 'text'
+            for comment in comments if comment.get('type') == 'text'
         ]
         df = pd.DataFrame(comment_list)
         df['timestamp'] = pd.to_datetime(df['timestamp'], unit='s')
